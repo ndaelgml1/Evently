@@ -1,0 +1,42 @@
+class StringsManager {
+  static const String startTitle = "startTitle";
+  static const String startDesc = "startDesc";
+  static const String language = "language";
+  static const String theme = "theme";
+  static const String letsStart = "letsStart ";
+  static const String secondTiTle = "secondTiTle";
+  static const String secondDesc = "secondDesc";
+  static const String thirdTitle = "thirdTitle";
+  static const String thirdDesc = "thirdDesc";
+  static const String forthTitle = "forthTitle";
+  static const String forgetPassword = "Forget Password";
+  static const String resetPassword = "resetPassword";
+  static const String register = "Register";
+  static const String name = "name";
+  static const String email = "email";
+  static const String password = "password";
+  static const String rePassword = "Re password";
+  static const String createAccount = "create Account";
+  static const String alreadyHaveAcc = "alreadyHaveAcc";
+  static const String login = "Login";
+  static const String invalidName = "Invalid Name";
+  static const String invalidEmail = "Invalid Email";
+  static const String errorPassMess = "Should Be Grether Than 8";
+  static const String errorMes = "Shouldn't Be Empty"; 
+  static const String errorRePassMess = "not same as password";
+  static const String dontHaveAccount = "Don’t Have Account ?";
+  static const String or = "Or";
+  static const String loginWithGoogle = "Login With Google";
+  // static const String forgetPassword = "forgetPassword";
+  // static const String forgetPassword = "forgetPassword";
+  // static const String forgetPassword = "forgetPassword";
+  // static const String forgetPassword = "forgetPassword";
+  // static const String forgetPassword = "forgetPassword";
+  // static const String forgetPassword = "forgetPassword";
+  // static const String forgetPassword = "forgetPassword";
+  // static const String forgetPassword = "forgetPassword";
+  // static const String forgetPassword = "forgetPassword";
+  // static const String forgetPassword = "forgetPassword";
+  // static const String forgetPassword = "forgetPassword";
+
+}
