@@ -27,11 +27,11 @@ class StringsManager {
   static const String dontHaveAccount = "Don’t Have Account ?";
   static const String or = "Or";
   static const String loginWithGoogle = "Login With Google";
-  // static const String forgetPassword = "forgetPassword";
-  // static const String forgetPassword = "forgetPassword";
-  // static const String forgetPassword = "forgetPassword";
-  // static const String forgetPassword = "forgetPassword";
-  // static const String forgetPassword = "forgetPassword";
+  static const String age = "Age";
+  static const String gender = "Gender";
+  static const String female = "Female";
+  static const String male = "Male";
+  static const String genderhint = "Select your gender";
   // static const String forgetPassword = "forgetPassword";
   // static const String forgetPassword = "forgetPassword";
   // static const String forgetPassword = "forgetPassword";

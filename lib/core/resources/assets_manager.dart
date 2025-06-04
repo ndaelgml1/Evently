@@ -2,7 +2,6 @@ class AssetsManager {
   static const String logo = 'assets/images/Logo.png';
   static const String branding = 'assets/images/branding.png';
   static const String eventlyLogo = 'assets/images/eventlyLogo.png';
-  // static const String google = 'assets/images/google-1.png';
   static const String startLight = 'assets/images/being_creative.png';
   static const String startDark = 'assets/images/designer_desk.png';
   static const String logoAppbar = 'assets/images/logo_appbar.png';
@@ -12,8 +11,19 @@ class AssetsManager {
   static const String sun = 'assets/images/Sun.png';
   static const String forgetPassword = 'assets/images/forgetPasswordPhoto.png';
   static const String google = 'assets/images/google.png';
-
-  // static const String moon = 'assets/images/svg/Moon.svg';
-  // static const String moon = 'assets/images/svg/Moon.svg';
-  // static const String moon = 'assets/images/svg/Moon.svg';
+  static const String male = "assets/images/venus-solid.svg";
+  static const String female = 'assets/images/mars-solid.svg';
+  static const String homeLogo = 'assets/images/home.svg';
+  static const String selectedHome = 'assets/images/selected_home.svg';
+  static const String user = 'assets/images/User.svg';
+  static const String selectedUser = 'assets/images/selected_user.svg';
+  static const String heart = 'assets/images/Heart.svg';
+  static const String selectedHeart = 'assets/images/selected_hreat.svg';
+  static const String map = 'assets/images/map.svg';
+  static const String selectedMap = 'assets/images/elected_map.svg';
+  static const String birthdayCard = 'assets/images/Birthday Club.png';
+  static const String bookCard = 'assets/images/Book Club.png';
+  static const String sportCard = 'assets/images/Sport Club.png';
+  // static const String selectedHeart = 'assets/images/selected_hreat.svg';
+  // static const String selectedHeart = 'assets/images/selected_hreat.svg';
 }

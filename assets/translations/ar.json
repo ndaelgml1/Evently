@@ -27,5 +27,10 @@
     "not same as password" : "ليست نفس كلمة المرور" ,
     "Don’t Have Account ?" : "اليس لديك حساب ؟" ,
     "Or " : "او" ,
-    "Login With Google" : "تسجيل الدخول مع جوجل"
+    "Login With Google" : "تسجيل الدخول مع جوجل",
+    "Age" : "العمر" ,
+    "Gender" : " الجنس" ,
+    "Female" : " انثي"  ,
+    "Male" : "ذكر" ,
+    "Select your gender" : "اختر الجنس "
 }

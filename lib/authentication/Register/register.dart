@@ -1,7 +1,8 @@
 import 'dart:developer';
-
 import 'package:easy_localization/easy_localization.dart';
+import 'package:evently/authentication/Register/drop_down_button.dart';
 import 'package:evently/core/dialog_utils.dart';
+import 'package:evently/core/firestoreHandeler.dart';
 import 'package:evently/core/resources/routes/routes_manager.dart';
 import 'package:evently/core/reusable_component/custom_elevated_button.dart';
 import 'package:evently/core/reusable_component/custom_text_button.dart';
@@ -13,6 +14,7 @@ import 'package:evently/core/reusable_component/custom_switch.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:evently/model/user.dart' as MyUser;
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -22,18 +24,23 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   int selectedLanguage = 0;
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  late GlobalKey<FormState> formKey;
   late TextEditingController nameController;
   late TextEditingController emailController;
   late TextEditingController passwordController;
   late TextEditingController rePasswordController;
+  late TextEditingController ageController;
+  late TextEditingController genderController;
   @override
   void initState() {
     super.initState();
+    formKey = GlobalKey<FormState>();
     nameController = TextEditingController();
     emailController = TextEditingController();
     passwordController = TextEditingController();
     rePasswordController = TextEditingController();
+    ageController = TextEditingController();
+    genderController = TextEditingController();
   }
 
   @override
@@ -43,6 +50,8 @@ class _RegisterState extends State<Register> {
     emailController.dispose();
     passwordController.dispose();
     rePasswordController.dispose();
+    ageController.dispose();
+    genderController.dispose();
   }
 
   @override
@@ -140,6 +149,23 @@ class _RegisterState extends State<Register> {
 
                     SizedBox(height: 20.h),
 
+                    CustomTextFormFeild(
+                      validation: (value) {
+                        if (value == null || value.isEmpty) {
+                          return StringsManager.errorMes;
+                        }
+                        return null;
+                      },
+                      controller: ageController,
+                      hint: StringsManager.age.tr(),
+                      prefixicon: Icons.person,
+                      keboard: TextInputType.number,
+                    ),
+                    SizedBox(height: 20.h),
+
+                    //  DropDownButtonForGender(),
+                    SizedBox(height: 20.h),
+
                     CustomElevatedButton(
                       title: StringsManager.createAccount.tr(),
                       onClick: () {
@@ -160,7 +186,9 @@ class _RegisterState extends State<Register> {
 
                         CustomTextButton(
                           title: StringsManager.login.tr(),
-                          onClick: () {},
+                          onClick: () { 
+                            Navigator.pushNamed(context, RoutesManager.login);
+                          },
                         ),
                       ],
                     ),
@@ -205,16 +233,25 @@ class _RegisterState extends State<Register> {
             email: emailController.text,
             password: passwordController.text,
           );
+      await Firestorehandeler.addUser(
+        MyUser.User(
+          name: nameController.text,
+          age: int.parse(ageController.text),
+          gender: genderController.text,
+          email: emailController.text,
+          id: credential.user?.uid,
+        ),
+      );
 
       Navigator.pop(context);
       log('User: ${credential.user?.uid}');
     } on FirebaseAuthException catch (e) {
-      Navigator.pushNamedAndRemoveUntil(
+      Navigator.pop(context) ;
+     await Navigator.pushNamedAndRemoveUntil(
         context,
         RoutesManager.home,
         (route) => false,
       );
-      Navigator.pop(context);
       if (e.code == 'weak-password') {
         DialogUtils.showMessageDialog(
           context: context,

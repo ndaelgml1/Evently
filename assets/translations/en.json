@@ -27,5 +27,10 @@
     "not same as password" : "not same as password" ,
     "Don’t Have Account ?" : "Don’t Have Account ?" ,
     "Or" : "Or" ,
-    "Login With Google":"Login With Google"
+    "Login With Google":"Login With Google" ,
+    "Age" : "Age" ,
+    "Gender" : "Gender" ,
+    "Female" : "Female" ,
+    "Male"   : "Male" , 
+    "Select your gender" : "Select your gender"
 }

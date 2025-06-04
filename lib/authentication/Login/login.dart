@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:evently/authentication/Login/widgets/google_button.dart';
 import 'package:evently/core/dialog_utils.dart';
+import 'package:evently/core/firestoreHandeler.dart';
 import 'package:evently/core/resources/routes/routes_manager.dart';
 import 'package:evently/core/reusable_component/custom_elevated_button.dart';
 import 'package:evently/core/reusable_component/custom_switch.dart';
@@ -9,9 +10,12 @@ import 'package:evently/core/reusable_component/custom_text_form_feild.dart';
 import 'package:evently/core/resources/assets_manager.dart';
 import 'package:evently/core/resources/constants.dart';
 import 'package:evently/core/resources/strings_manager.dart';
+import 'package:evently/providers/user_provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:evently/model/user.dart' as MyUser;
+import 'package:provider/provider.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -200,13 +204,17 @@ class _SignInState extends State<Login> {
   }
 
   login() async {
+    UserProvider provider = Provider.of<UserProvider>(context, listen: false);
     try {
       DialogUtils.showLodingDialog(context);
       final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: emailController.text,
         password: passwordController.text,
       );
-      print(credential.user?.uid);
+      MyUser.User? myUser = await Firestorehandeler.getUser(
+        credential.user?.uid ?? "",
+      );
+     provider.SaveUser(myUser);
       Navigator.pop(context);
       Navigator.pushReplacementNamed(context, RoutesManager.home);
       print(credential.user?.uid);

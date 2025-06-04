@@ -1,9 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:evently/core/dialog_utils.dart';
 import 'package:evently/core/resources/constants.dart';
 import 'package:evently/core/reusable_component/custom_elevated_button.dart';
 import 'package:evently/core/resources/assets_manager.dart';
 import 'package:evently/core/resources/strings_manager.dart';
 import 'package:evently/core/reusable_component/custom_text_form_feild.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -62,10 +65,13 @@ class _ResetPasswordState extends State<ResetPassword> {
               SizedBox(height: 20.h),
               CustomElevatedButton(
                 title: StringsManager.resetPassword.tr(),
-                onClick: () { 
+                onClick: () async{ 
                   if(formKey.currentState?.validate()??false){
-                    
+                    DialogUtils.showLodingDialog(context);
+                   await FirebaseAuth.instance.sendPasswordResetEmail(email: emailController.text);
                   }
+                  Navigator.pop(context);
+                  DialogUtils.showToast("Link sent successfully");
                 },
               ),
             ],

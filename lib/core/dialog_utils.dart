@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class DialogUtils {
   static showMessageDialog({
@@ -19,8 +20,8 @@ class DialogUtils {
               Visibility(
                 visible: negTitle != null,
                 child: ElevatedButton(
-                  onPressed: posClick,
-                  child: Text(posTitle),
+                  onPressed: negClick,
+                  child: Text(negTitle?? " "),
                 ),
               ),
             ],
@@ -28,9 +29,24 @@ class DialogUtils {
     );
   }
 
-  static showLodingDialog(BuildContext context) { 
-    showDialog(context: context, builder: (context)=> AlertDialog(
-     title: Center(child: CircularProgressIndicator()) ));
-    
+  static showLodingDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder:
+          (context) =>
+              AlertDialog(title: Center(child: CircularProgressIndicator())),
+    );
+  }
+
+  static showToast(String message) {
+    Fluttertoast.showToast(
+      msg: message,
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+      timeInSecForIosWeb: 1,
+      backgroundColor: Colors.grey,
+      textColor: Colors.black,
+      fontSize: 16.0,
+    );
   }
 }

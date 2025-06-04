@@ -18,6 +18,26 @@ class ThemeManager {
 
       brightness: Brightness.light,
     ),
+
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: ColorsManager.blue ,
+      shape: StadiumBorder(
+      side: BorderSide(
+        color: ColorsManager.white ,
+        width: 4 ,
+      )
+      )
+    ), 
+
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: ColorsManager.blue ,
+      type: BottomNavigationBarType.fixed ,
+       selectedLabelStyle: TextStyle(
+        color: ColorsManager.white,
+        fontSize: 12 ,
+        fontWeight: FontWeight.w700,
+      )
+    ),
     appBarTheme: AppBarTheme(
       centerTitle: true,
       backgroundColor: Colors.transparent,
@@ -109,6 +129,26 @@ class ThemeManager {
       outline: ColorsManager.offWhite,
       tertiary: ColorsManager.red,
       brightness: Brightness.dark,
+    ), 
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: ColorsManager.darkBackground ,
+      shape: StadiumBorder(
+      side: BorderSide(
+        color: ColorsManager.white ,
+        width: 4 ,
+      )
+      )
+    ), 
+
+    
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: ColorsManager.darkBackground ,
+      type: BottomNavigationBarType.fixed ,
+      selectedLabelStyle: TextStyle(
+        color: ColorsManager.white,
+        fontSize: 12 ,
+        fontWeight: FontWeight.w700,
+      )
     ),
 
     appBarTheme: AppBarTheme(

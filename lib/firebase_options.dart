@@ -63,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '882317732270',
     projectId: 'evently-6e7d6',
     storageBucket: 'evently-6e7d6.firebasestorage.app',
+    iosClientId: '882317732270-s6e03jdd18t5arbb610d924m7v4869q6.apps.googleusercontent.com',
     iosBundleId: 'com.example.evently',
   );
 
@@ -72,6 +73,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '882317732270',
     projectId: 'evently-6e7d6',
     storageBucket: 'evently-6e7d6.firebasestorage.app',
+    iosClientId: '882317732270-s6e03jdd18t5arbb610d924m7v4869q6.apps.googleusercontent.com',
     iosBundleId: 'com.example.evently',
   );
 
