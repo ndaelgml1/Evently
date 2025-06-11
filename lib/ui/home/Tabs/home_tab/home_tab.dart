@@ -1,4 +1,3 @@
-import 'package:evently/core/resources/colors_manager.dart';
 import 'package:evently/ui/home/widgets/event_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,9 +11,9 @@ class HomeTab extends StatelessWidget {
       padding: REdgeInsets.all(16),
       child: ListView.separated(
         itemBuilder: (context, index) => EventItem(),
-         separatorBuilder: (context, index) => SizedBox(height:16.h),
-          itemCount: 10 
-          ),
+        separatorBuilder: (context, index) => SizedBox(height: 16.h),
+        itemCount: 10,
+      ),
     );
   }
 }

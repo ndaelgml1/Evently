@@ -63,6 +63,7 @@ class _RegisterState extends State<Register> {
       body: Form(
         key: formKey,
         child: SingleChildScrollView(
+          padding: EdgeInsets.only(bottom: 16),
           child: Column(
             children: [
               SizedBox(
@@ -186,7 +187,7 @@ class _RegisterState extends State<Register> {
 
                         CustomTextButton(
                           title: StringsManager.login.tr(),
-                          onClick: () { 
+                          onClick: () {
                             Navigator.pushNamed(context, RoutesManager.login);
                           },
                         ),
@@ -245,9 +246,10 @@ class _RegisterState extends State<Register> {
 
       Navigator.pop(context);
       log('User: ${credential.user?.uid}');
+      Navigator.pushReplacementNamed(context, RoutesManager.login);
     } on FirebaseAuthException catch (e) {
-      Navigator.pop(context) ;
-     await Navigator.pushNamedAndRemoveUntil(
+      Navigator.pop(context);
+      await Navigator.pushNamedAndRemoveUntil(
         context,
         RoutesManager.home,
         (route) => false,

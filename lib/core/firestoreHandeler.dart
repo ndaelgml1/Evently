@@ -23,13 +23,10 @@ class Firestorehandeler {
     return document.set(user);
   }
 
- static Future getUser(String userId) async {
+  static Future getUser(String userId) async {
     var collection = getUserCollection();
     var document = collection.doc(userId);
     var snapshot = await document.get();
     return snapshot.data();
   }
 }
-
-
-

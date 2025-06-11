@@ -114,7 +114,7 @@ class _StartScreenState extends State<StartScreen> {
             CustomElevatedButton(
               title: StringsManager.letsStart.tr(),
               onClick: () {
-                Navigator.pushReplacementNamed(context, RoutesManager.register);
+                Navigator.pushReplacementNamed(context, RoutesManager.login);
               },
             ),
             Spacer(),

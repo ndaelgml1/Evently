@@ -35,7 +35,10 @@ class EventlyApp extends StatelessWidget {
                   darkTheme: ThemeManager.dark,
                   themeMode: provider.themeMode,
                   onGenerateRoute: RoutesManager.router,
-                  initialRoute:RoutesManager.home ,
+                  initialRoute:
+                      FirebaseAuth.instance.currentUser != null
+                          ? RoutesManager.home
+                          : RoutesManager.startScreen,
                 ),
           );
         },
@@ -43,8 +46,3 @@ class EventlyApp extends StatelessWidget {
     );
   }
 }
-
-//Firebase.instance.currentUser!=null ? RoutesManager.home : RoutesManager.startScreen ,
-// FirebaseAuth.instance.currentUser == null
-//                   ? RoutesManager.startScreen
-//                   : RoutesManager.home,

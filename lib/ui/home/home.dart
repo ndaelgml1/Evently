@@ -30,15 +30,15 @@ class _HomeState extends State<Home> {
     getFirestoreUser();
   }
 
- getFirestoreUser() async {
+  getFirestoreUser() async {
     UserProvider provider = Provider.of<UserProvider>(context, listen: false);
     if (provider.myUser == null) {
       my_user.User? user = await Firestorehandeler.getUser(
         FirebaseAuth.instance.currentUser?.uid ?? "",
       );
-      provider.SaveUser(user);
+      provider.saveUser(user);
     }
-}
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -132,6 +132,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-
-
-

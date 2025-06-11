@@ -118,7 +118,7 @@ class _SignInState extends State<Login> {
                     title: StringsManager.login.tr(),
                     onClick: () {
                       if (formKey.currentState?.validate() ?? false) {
-                        Login();
+                        login();
                       }
                     },
                   ),
@@ -214,7 +214,7 @@ class _SignInState extends State<Login> {
       MyUser.User? myUser = await Firestorehandeler.getUser(
         credential.user?.uid ?? "",
       );
-     provider.SaveUser(myUser);
+      provider.saveUser(myUser);
       Navigator.pop(context);
       Navigator.pushReplacementNamed(context, RoutesManager.home);
       print(credential.user?.uid);
