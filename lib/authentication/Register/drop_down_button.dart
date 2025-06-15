@@ -5,6 +5,7 @@ import 'package:evently/core/resources/strings_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// ignore: must_be_immutable
 class DropDownButtonForGender extends StatelessWidget {
   DropDownButtonForGender({super.key});
   String selectedGender = 'male';
